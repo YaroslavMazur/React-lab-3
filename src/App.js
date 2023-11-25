@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import ToDoList from './Pages/ToDoList/ToDoList';
+import Header from './components/Header/Header';
+import Profile from './Pages/Profile/Profile.jsx';
+import Login from './Pages/Login/Login.jsx';
+import News from './Pages/News/News.jsx';
+import {Navigate, Route,Routes} from 'react-router-dom';
 
 function App() {
+
+  const isLogged = localStorage.getItem("userData") === "true";
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='App'>
+        <Header/>
+          <Routes>
+            <Route element = {<ToDoList/>} path='/'></Route>
+            <Route element = {isLogged? <Profile/>: <Navigate to = "/login"/>} path='/profile'></Route>
+            <Route element = {<News/>} path='/news'></Route>
+            <Route element = {<Login/>} path='/login'></Route>
+          </Routes>
+      </div>
+    
   );
 }
 

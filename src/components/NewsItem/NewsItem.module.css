@@ -1,0 +1,16 @@
+.newsItemContainer{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    background-color: var(--main-black);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.newsItemContainer *{
+    color: white;
+}

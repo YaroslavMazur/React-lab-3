@@ -1,0 +1,27 @@
+.itemContainer{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    
+}
+
+.itemText{
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.itemDelete{
+    background-color: rgb(154, 0, 0);
+    color: white;
+    outline: none;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 10px;
+}
